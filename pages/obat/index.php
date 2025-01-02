@@ -49,6 +49,11 @@
                                                         name="nama_obat" required>
                                                 </div>
                                                 <div class="form-group">
+                                                    <label for="qty">Qty</label>
+                                                    <input type="text" class="form-control" id="qty"
+                                                        name="qty" required>
+                                                </div>
+                                                <div class="form-group">
                                                     <label for="kemasan">Kemasan</label>
                                                     <input type="text" class="form-control" id="kemasan" name="kemasan"
                                                         required>
@@ -75,6 +80,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Obat</th>
+                                    <th>Qty</th>
                                     <th>Kemasan</th>
                                     <th>Harga</th>
                                     <th>Aksi</th>
@@ -95,6 +101,7 @@
                                 <tr>
                                     <td><?php echo $no++ ?></td>
                                     <td><?php echo $data['nama_obat'] ?></td>
+                                    <td><?php echo $data['qty'] ?></td>
                                     <td><?php echo $data['kemasan'] ?></td>
                                     <td><?php echo $data['harga'] ?></td>
                                     <td>
@@ -126,6 +133,11 @@
                                                             <input type="text" class="form-control" id="nama_obat"
                                                                 name="nama_obat"
                                                                 value="<?php echo $data['nama_obat'] ?>" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="qty">Qty</label>
+                                                            <input type="text" class="form-control" id="qty"
+                                                                name="qty" value="<?php echo $data['qty']?>" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="kemasan">Kemasan</label>

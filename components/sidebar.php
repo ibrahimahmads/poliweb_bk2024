@@ -54,25 +54,25 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="dokter.php" class="nav-link">
+                            <a href="dokterAdmin.php" class="nav-link">
                                 <i class="fas fa-solid fa-user-nurse nav-icon"></i>
                                 <p>Dokter <span class="right badge badge-danger">Admin</span></p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="poli.php" class="nav-link">
+                            <a href="poliAdmin.php" class="nav-link">
                                 <i class="fas fa-solid fa-hospital nav-icon"></i>
                                 <p>Poli <span class="right badge badge-danger">Admin</span></p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="obat.php" class="nav-link">
+                            <a href="obatAdmin.php" class="nav-link">
                                 <i class="fas fa-solid fa-tablets nav-icon"></i>
                                 <p>Obat <span class="right badge badge-danger">Admin</span></p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pasien.php" class="nav-link">
+                            <a href="pasienAdmin.php" class="nav-link">
                                 <i class="fas fa-solid fa-user nav-icon"></i>
                                 <p>Pasien <span class="right badge badge-danger">Admin</span></p>
                             </a>
@@ -87,19 +87,25 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-solid fa-hospital-user nav-icon"></i>
-                                <p>Jadwal Praktek Dokter <span class="right badge badge-success">Dokter</span></p>
+                            <a href="profileDokter.php" class="nav-link">
+                                <i class="fas fa-solid fa-address-card nav-icon"></i>
+                                <p>Profile Dokter <span class="right badge badge-success">Dokter</span></p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="jadwalPraktik.php" class="nav-link">
+                                <i class="fas fa-solid fa-hospital-user nav-icon"></i>
+                                <p>Jadwal Praktik Dokter <span class="right badge badge-success">Dokter</span></p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="periksaPasien.php" class="nav-link">
                                 <i class="fas fa-solid fa-stethoscope nav-icon"></i>
                                 <p>Periksa Pasien <span class="right badge badge-success">Dokter</span></p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="riwayatPasien.php" class="nav-link">
                                 <i class="fas fa-solid fa-book-medical nav-icon"></i>
                                 <p>Riwayat Pasien <span class="right badge badge-success">Dokter</span></p>
                             </a>
@@ -114,7 +120,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="daftarPoli.php" class="nav-link">
                                 <i class="fas fa-solid fa-stethoscope nav-icon"></i>
                                 <p>Daftar Poli <span class="right badge badge-info">Pasien</span></p>
                             </a>

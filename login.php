@@ -13,113 +13,149 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #517f5a;
+            background-image: url('img/bg/mesh2.png'); /* Ganti dengan path gambar Anda */
+            background-size: cover; /* Gambar menyesuaikan ukuran layar */
+            background-repeat: no-repeat; /* Gambar tidak diulang */
+            background-position: center;
         }
 
-        .login-container {
+        .container {
             display: flex;
-            max-width: 1200px;
-            /* Ubah max-width sesuai kebutuhan */
-            background-color: #fff;
-            color: #00000;
+            width: 1100px;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
         }
 
-        .left-container {
+        .sign-in {
             flex: 1;
-            overflow: hidden;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .left-container img {
+        .sign-in h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .sign-in form {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 320px;
         }
 
-        .right-container {
-            flex: 1;
-            padding: 40px;
-            /* Menambahkan padding untuk memperbesar area formulir */
-        }
-
-        .login-form {
-            max-width: 400px;
-            /* Sesuaikan dengan kebutuhan */
-            margin: 0 auto;
-        }
-
-        .login-form h2 {
-            text-align: center;
-            /* Tengahkan judul */
-        }
-
-        .login-form label {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .login-form input {
+        .sign-in input {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            border: none;
-            /* Hapus border */
-            border-bottom: 1px solid #ccc;
-            /* Tambahkan garis bawah */
-            outline: none;
-            /* Hapus outline */
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
-        .login-form button {
+        .sign-in button {
             width: 100%;
             padding: 10px;
-            background-color: #588163;
-            color: #fff;
             border: none;
+            background-color: #6c757d;
+            color: white;
+            font-size: 16px;
             border-radius: 4px;
             cursor: pointer;
         }
 
-        .register-link {
-            text-align: center;
-            margin-top: 10px;
+        .sign-in button:hover {
+            background-color: #212529;
         }
 
-        .register-link a {
-            color: #3498db;
+        .sign-in a{
+            width: 320px;
+            margin-top: 5px;
+            padding: 10px 20px;
+            border: 2px solid #7f7f7f;
+            background: transparent;
+            color:  #7f7f7f;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
             text-decoration: none;
+            text-align: center;
+        }
+
+        .sign-in a:hover{
+            background-color: #7f7f7f;
+            color: white;
+        }
+
+        .sign-up {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: white;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sign-up h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sign-up p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .sign-up a {
+            padding: 10px 20px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .sign-up a:hover {
+            background-color: white;
+            color: #7f7f7f;
         }
     </style>
 </head>
 
 <body>
-    <div class="login-container">
-        <div class="left-container">
-            <img src="img/logo/logo_dokter.png" style="width: 200px; height:500px; padding-top:20px;" alt="Login Image">
+    <div class="container">
+        <div class="sign-in">
+        <h4 class="text-center">Login </h4>
+            <p class="login-box-msg text-center">Lakukan login <b class="text-success">Dokter</b> untuk melayani</p>
+            <br><br>
+            <form action="pages/login/checkLogin.php" method="post">
+                <label for="nama">Username :</label>
+                <input type="text" class="form-control" name="username" required>
+
+                <label for="no_hp">Password :</label>
+                <input type="password" class="form-control" name="password" required>
+
+                <button type="submit" class="btn btn-block btn-success"> 
+                    Masuk 
+               </button>
+            </form>
+            <a href="loginUser.php">
+                <span>Pasien klik disini</span>
+            </a>
+            <a href="index.php#tempat-login">
+                <span>Home</span>
+            </a>
         </div>
-        <div class="right-container">
-            <div class="login-form">
-                <h4 class="text-center">Login </h4>
-                <p class="login-box-msg text-center">Lakukan login <b class="text-success">Dokter</b> untuk melayani</p>
-                <br><br>
-                <form action="pages/login/checkLogin.php" method="post">
-                    <label for="nama">Username :</label>
-                    <input type="text" class="form-control" name="username" required>
-
-                    <label for="no_hp">Password :</label>
-                    <input type="password" class="form-control" name="password" required>
-
-                    <button type="submit" class="btn btn-block btn-success">
-                        Masuk
-                    </button>
-                </form>
-
-            </div>
-            <div class="text-center mt-3"> <a href="loginUser.php"><span
-                        class="text-primary">Pasien klik disini</span></a>
-            </div>
+        <div class="sign-up">
+            <img src="img/logo/logo_dokter.png" style="width: 200px; height:500px; padding-top:20px;" alt="Login Image">
         </div>
     </div>
     </div>
