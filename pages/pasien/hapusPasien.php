@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Jika berhasil, redirect kembali ke halaman index atau sesuaikan dengan kebutuhan Anda
         echo '<script>';
         echo 'alert("Data pasien berhasil dihapus!");';
-        echo 'window.location.href = "../../pasien.php";';
+        echo 'window.location.href = "../../pasienAdmin.php";';
         echo '</script>';
         exit();
     } else {

@@ -35,61 +35,6 @@ if ($result_pasien && $result_dokter && $result_poli && $result_obat) {
     $jumlah_obat = "Error";
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dokter Dashboard</title>
-    <!-- Link to Bootstrap CSS -->
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css" />
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-    <style>
-        /* Style umum untuk teks putih */
-        .text-white {
-            font-weight: 500;
-            /* membuat teks sedikit lebih tebal */
-        }
-
-        /* Mengubah ukuran dan gaya font untuk judul dan konten yang berbeda */
-        h1.text-white {
-            font-size: 2.2rem;
-            /* ukuran font yang lebih besar */
-            font-family: 'Arial', sans-serif;
-            /* ganti dengan font pilihan Anda */
-        }
-
-        h4.text-white {
-            font-size: 1.6rem;
-            font-family: 'Arial', sans-serif;
-        }
-
-        h5.text-white {
-            font-size: 1.3rem;
-            font-family: 'Arial', sans-serif;
-        }
-
-        /* Gaya khusus untuk teks pada info-box */
-        .info-box-text {
-            font-size: 1rem;
-            /* menyesuaikan ukuran font */
-            margin-bottom: 5px;
-            /* memberikan sedikit ruang di bawah teks */
-        }
-
-        /* Gaya khusus untuk nomor pada info-box */
-        .info-box-number {
-            font-size: 1.2rem;
-            /* menyesuaikan ukuran font */
-            font-weight: bold;
-            /* membuatnya tebal */
-        }
-    </style>
-</head>
-
-<body>
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -121,9 +66,9 @@ if ($result_pasien && $result_dokter && $result_poli && $result_obat) {
                             <p>Jumlah Pasien</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="fa-solid fa-users"></i>
                         </div>
-                        <a href="pasien.php" class="small-box-footer">Info Selanjutnya <i
+                        <a href="pasienAdmin.php" class="small-box-footer">Info Selanjutnya <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -137,9 +82,9 @@ if ($result_pasien && $result_dokter && $result_poli && $result_obat) {
                             <p>Jumlah Dokter</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                            <i class="fa-solid fa-user-doctor"></i>
                         </div>
-                        <a href="dokter.php" class="small-box-footer">Info Selanjutnya <i
+                        <a href="dokterAdmin.php" class="small-box-footer">Info Selanjutnya <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -153,9 +98,9 @@ if ($result_pasien && $result_dokter && $result_poli && $result_obat) {
                             <p>Jenis Poli</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-person-add"></i>
+                            <i class="fa-solid fa-house-chimney-medical"></i>
                         </div>
-                        <a href="poli.php" class="small-box-footer">Info Selanjutnya <i
+                        <a href="poliAdmin.php" class="small-box-footer">Info Selanjutnya <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -169,9 +114,9 @@ if ($result_pasien && $result_dokter && $result_poli && $result_obat) {
                             <p>Jenis Obat</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
+                            <i class="fa-solid fa-pills"></i>
                         </div>
-                        <a href="obat.php" class="small-box-footer">Info Selanjutnya <i
+                        <a href="obatAdmin.php" class="small-box-footer">Info Selanjutnya <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -182,13 +127,3 @@ if ($result_pasien && $result_dokter && $result_poli && $result_obat) {
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-
-    <!-- Link to Bootstrap JS and other necessary scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.2/dist/umd/popper.min.js"></script>
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="plugins/adminlte/adminlte.min.js"></script>
-
-</body>
-
-</html>

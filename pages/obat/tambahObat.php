@@ -4,11 +4,12 @@ include '../../config/koneksi.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ambil nilai dari form
     $nama_obat = $_POST["nama_obat"];
+    $qty = $_POST["qty"];
     $kemasan = $_POST["kemasan"];
     $harga = $_POST["harga"];
 
     // Query untuk menambahkan data obat ke dalam tabel
-    $query = "INSERT INTO obat (nama_obat, kemasan, harga) VALUES ('$nama_obat', '$kemasan', '$harga')";
+    $query = "INSERT INTO obat (nama_obat, qty, kemasan, harga) VALUES ('$nama_obat', '$qty', '$kemasan', '$harga')";
     
 
     // if ($koneksi->query($query) === TRUE) {
@@ -19,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // exit();
         echo '<script>';
         echo 'alert("Data obat berhasil ditambahkan!");';
-        echo 'window.location.href = "../../obat.php";';
+        echo 'window.location.href = "../../obatAdmin.php";';
         echo '</script>';
         exit();
     } else {
