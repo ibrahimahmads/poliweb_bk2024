@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Des 2024 pada 18.25
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.1.17
+-- Waktu pembuatan: 29 Des 2024 pada 17.20
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,6 +36,14 @@ CREATE TABLE `daftar_poli` (
   `status_periksa` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `daftar_poli`
+--
+
+INSERT INTO `daftar_poli` (`id`, `id_pasien`, `id_jadwal`, `keluhan`, `no_antrian`, `status_periksa`) VALUES
+(1, 1, 2, 'badan lemas', 1, '1'),
+(2, 1, 4, 'sering mengantuk', 1, '0');
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +55,14 @@ CREATE TABLE `detail_periksa` (
   `id_periksa` int(11) NOT NULL,
   `id_obat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `detail_periksa`
+--
+
+INSERT INTO `detail_periksa` (`id`, `id_periksa`, `id_obat`) VALUES
+(9, 2, 1),
+(10, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -68,7 +84,9 @@ CREATE TABLE `dokter` (
 --
 
 INSERT INTO `dokter` (`id`, `nama`, `password`, `alamat`, `no_hp`, `id_poli`) VALUES
-(1, 'ahmad', 'b6b4023df81e58b98006e5c7dfab9547', 'klw', '05464464664', 2);
+(1, 'ahmad', 'b6b4023df81e58b98006e5c7dfab9547', 'klw', '05464464664', 2),
+(3, 'oki', '01c4bf6ba816ef53c34e057af258f76f', 'Semarang Barat', '05464464664', 2),
+(4, 'fufufafa', '5653c6b1f51852a6351ec69c8452abc6', 'solo', '085588939938', 1);
 
 -- --------------------------------------------------------
 
@@ -85,6 +103,18 @@ CREATE TABLE `jadwal_periksa` (
   `aktif` char(1) NOT NULL DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `jadwal_periksa`
+--
+
+INSERT INTO `jadwal_periksa` (`id`, `id_dokter`, `hari`, `jam_mulai`, `jam_selesai`, `aktif`) VALUES
+(1, 1, 'Senin', '08:00:00', '13:00:00', 'N'),
+(2, 1, 'Jumat', '13:00:00', '19:00:00', 'Y'),
+(3, 3, 'Selasa', '08:00:00', '15:00:00', 'N'),
+(4, 3, 'Rabu', '12:00:00', '17:30:00', 'Y'),
+(5, 4, 'Kamis', '15:30:00', '20:00:00', 'Y'),
+(6, 4, 'Sabtu', '15:00:00', '21:00:00', 'N');
+
 -- --------------------------------------------------------
 
 --
@@ -94,6 +124,7 @@ CREATE TABLE `jadwal_periksa` (
 CREATE TABLE `obat` (
   `id` int(11) NOT NULL,
   `nama_obat` varchar(50) NOT NULL,
+  `qty` int(11) NOT NULL,
   `kemasan` varchar(35) NOT NULL,
   `harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -102,9 +133,12 @@ CREATE TABLE `obat` (
 -- Dumping data untuk tabel `obat`
 --
 
-INSERT INTO `obat` (`id`, `nama_obat`, `kemasan`, `harga`) VALUES
-(1, 'Vitamin A ', 'Tablet', 17000),
-(2, 'Vitamin C', 'Botol', 12500);
+INSERT INTO `obat` (`id`, `nama_obat`, `qty`, `kemasan`, `harga`) VALUES
+(1, 'Vitamin A (1 botol)', 50, 'Tablet', 6400),
+(2, 'Vitamin C 500 mg', 1, 'Botol', 40000),
+(4, 'Vitamin C 500 mg', 2, 'Botol', 80000),
+(5, 'Paracetamol 500 mg', 10, 'Tablet', 5500),
+(6, 'Loratadine 10 mg', 15, 'Tablet', 7500);
 
 -- --------------------------------------------------------
 
@@ -127,7 +161,9 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`id`, `nama`, `password`, `alamat`, `no_ktp`, `no_hp`, `no_rm`) VALUES
-(1, 'ibrahim', '2a90dfa0f37b92aaebf369e9a4d38ba4', 'kdl', '6646444', '099283884', '202412-001');
+(1, 'ibrahim', '2a90dfa0f37b92aaebf369e9a4d38ba4', 'kdl', '6646444', '099283884', '202412-001'),
+(3, 'joko', 'a825009ae6d3aaf8e8667ab4dd15a830', 'smg', '866544566', '05464464688', '202412-002'),
+(4, 'Lisa', 'a825009ae6d3aaf8e8667ab4dd15a830', 'smg', '424554556', '08393995733', '202412-003');
 
 -- --------------------------------------------------------
 
@@ -142,6 +178,13 @@ CREATE TABLE `periksa` (
   `catatan` text NOT NULL,
   `biaya_periksa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `periksa`
+--
+
+INSERT INTO `periksa` (`id`, `id_daftar_poli`, `tgl_periksa`, `catatan`, `biaya_periksa`) VALUES
+(2, 1, '2024-12-29 16:04:00', 'cepat sembuh', 196400);
 
 -- --------------------------------------------------------
 
@@ -160,8 +203,8 @@ CREATE TABLE `poli` (
 --
 
 INSERT INTO `poli` (`id`, `nama_poli`, `keterangan`) VALUES
-(1, 'Poli Gigi', 'Available'),
-(2, 'Poli Gizi', 'Available');
+(1, 'Poli Gigi', 'Dokter Gigi'),
+(2, 'Poli Gizi', 'Dokter Gizi');
 
 --
 -- Indexes for dumped tables
@@ -230,43 +273,43 @@ ALTER TABLE `poli`
 -- AUTO_INCREMENT untuk tabel `daftar_poli`
 --
 ALTER TABLE `daftar_poli`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `detail_periksa`
 --
 ALTER TABLE `detail_periksa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `dokter`
 --
 ALTER TABLE `dokter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `jadwal_periksa`
 --
 ALTER TABLE `jadwal_periksa`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `obat`
 --
 ALTER TABLE `obat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `periksa`
 --
 ALTER TABLE `periksa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `poli`
