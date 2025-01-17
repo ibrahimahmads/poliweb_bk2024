@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Des 2024 pada 17.20
+-- Waktu pembuatan: 17 Jan 2025 pada 20.25
 -- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+-- Versi PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,8 @@ CREATE TABLE `daftar_poli` (
 
 INSERT INTO `daftar_poli` (`id`, `id_pasien`, `id_jadwal`, `keluhan`, `no_antrian`, `status_periksa`) VALUES
 (1, 1, 2, 'badan lemas', 1, '1'),
-(2, 1, 4, 'sering mengantuk', 1, '0');
+(2, 1, 4, 'sering mengantuk', 1, '0'),
+(3, 3, 4, 'letih, lesu', 2, '0');
 
 -- --------------------------------------------------------
 
@@ -273,7 +274,7 @@ ALTER TABLE `poli`
 -- AUTO_INCREMENT untuk tabel `daftar_poli`
 --
 ALTER TABLE `daftar_poli`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `detail_periksa`
@@ -291,7 +292,7 @@ ALTER TABLE `dokter`
 -- AUTO_INCREMENT untuk tabel `jadwal_periksa`
 --
 ALTER TABLE `jadwal_periksa`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `obat`

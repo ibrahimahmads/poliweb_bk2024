@@ -170,8 +170,7 @@
                                     <td>
                                         <?php
                                             require 'config/koneksi.php';
-                                            $cekJadwalPeriksa = "SELECT * FROM daftar_poli INNER JOIN jadwal_periksa ON daftar_poli.id_jadwal = jadwal_periksa.id 
-                                            WHERE jadwal_periksa.id_dokter = '$id_dokter' AND daftar_poli.status_periksa = '0'";
+                                            $cekJadwalPeriksa = "SELECT * FROM daftar_poli INNER JOIN jadwal_periksa ON daftar_poli.id_jadwal = jadwal_periksa.id WHERE jadwal_periksa.id_dokter = '$id_dokter' AND daftar_poli.status_periksa = '0'";
                                             $queryCekJadwal = mysqli_query($mysqli,$cekJadwalPeriksa);
                                             if (mysqli_num_rows($queryCekJadwal) > 0) {
                                             
@@ -222,13 +221,13 @@
                                                             <label for="jamMulai">Jam Mulai</label>
                                                             <input type="time" class="form-control" id="jamMulai"
                                                                 name="jamMulai" required
-                                                                value="<?= $data['jam_mulai'] ?>" readonly>
+                                                                value="<?= $data['jam_mulai'] ?>" disabled>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="jamSelesai">Jam Selesai</label>
                                                             <input type="time" class="form-control" id="jamSelesai"
                                                                 name="jamSelesai" required
-                                                                value="<?= $data['jam_selesai'] ?>" readonly>
+                                                                value="<?= $data['jam_selesai'] ?>" disabled>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="aktif">Aktif</label>
